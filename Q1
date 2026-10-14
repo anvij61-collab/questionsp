@@ -1,0 +1,40 @@
+public class Q1 {
+    public static void main(String[] args) {
+        String a= "World Wide Web";
+        a = a.toUpperCase();
+        String[] words = a.split(" ");
+        String finalresult ="";
+
+        for(int i =0; i<words.length; i++){
+            String word = words[i];
+
+            String result ="";
+
+            for (int j = 0; j < word.length() / 2; j++) {
+                char ch1 = word.charAt(j);
+                char ch2 = word.charAt(word.length() - 1 - j);
+
+                result += ch1 + ch2;
+            }
+
+                if (word.length() % 2 != 0) {
+                char ch3 = word.charAt(word.length() / 2);
+                result += ch3;
+            }
+
+            
+            int sum = 0;
+            
+            int k = 0;
+            for (; k + 1 < result.length(); k += 2) {
+            sum += (result.charAt(k) - 64)- (result.charAt(k + 1) - 64);
+            }
+
+            if (k < result.length()) {
+            sum += result.charAt(k) - 64;
+            }
+        finalresult +=sum;
+        }
+        System.out.println(Integer.parseInt(finalresult));
+    }
+}
