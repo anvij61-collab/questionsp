@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class placement2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter strings");
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+        System.out.println("Enter digits:");
+        int n1 = sc.nextInt();
+        int n2= sc.nextInt();
+        String ans="";
+
+        String pc = String.valueOf(n1);
+        
+        if(s1.compareTo(s2) == -1 || s1.compareTo(s2) ==0){
+            ans = (s1.substring(0,1).toLowerCase()) + (s2.toUpperCase()) + (pc.substring(n2-1, n2)) + (pc.substring(pc.length()-n2, pc.length()-n2+1));       
+        } else {
+            ans = (s2.substring(0,1).toLowerCase()) + (s1.toUpperCase()) + (pc.substring(n2-1, n2)) + (pc.substring(pc.length()-n2, pc.length()-n2+1));       
+        }
+        System.out.println(ans);
+    }
+}
+
+*input 1 : string : firstname : rohit
+input2 : string : last name : roy
+input3 : int : pincode : 462309
+input 4: int : 2
+
+output : string: username : rROHIT60
+
+explain : first letter of small string in Lc + all letter of large string in uc + nth digit of pincode from LHS + nth digit of pincode from RHS */
